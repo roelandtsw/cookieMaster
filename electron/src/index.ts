@@ -1,43 +1,24 @@
 import type {
-  BatteryInfo,
-  DeviceId,
-  DeviceInfo,
-  DevicePlugin,
-  GetLanguageCodeResult
+  Cookies,
+  CookiePlugin
 } from '../../src/definitions';
 
-import { uuid4 } from './utils';
+const { session } = require('electron')
 
-export class Device implements DevicePlugin {
 
-  async getInfo(): Promise<DeviceInfo> {
-    return {
-      model: 'N/A',
-      platform: <const>'electron',
-      operatingSystem: 'unknown',
-      osVersion: 'N/A',
-      manufacturer: 'N/A',
-      isVirtual: false,
-      webViewVersion: 'N/A',
-    };
+export class CookieMaster implements CookiePlugin {
+
+  async getCookies(): Promise<Cookies>{
+    console.log("GET COOKIES");
+    let cookies = await session.defaultSession.cookies.get({}) ;
+
+    return {d : cookies};
   }
 
-  async getLanguageCode(): Promise<GetLanguageCodeResult> {
-    return {
-      value: 'en',
-    };
-  }
+  async clearCookies(): Promise<Cookies>{
+    console.log("CLEAR COOKIES");
+    session.defaultSession.clearStorageData([]);
 
-  async getId(): Promise<DeviceId> {
-    return {
-      uuid: uuid4(),
-    };
-  }
-
-  async getBatteryInfo(): Promise<BatteryInfo> {
-    return {
-      batteryLevel: 0,
-      isCharging: false,
-    };
+    return {d : "COOKIES CLEARED"};
   }
 }
