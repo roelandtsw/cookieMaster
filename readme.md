@@ -42,7 +42,7 @@ console.log(oMessage);
 getCookies() => Promise<Cookies>
 ```
 
-Get all cookies from the node.js shell (electron)
+Return an unique identifier for the device.
 
 **Returns:** <code>Promise&lt;<a href="#cookies">Cookies</a>&gt;</code>
 
@@ -57,7 +57,7 @@ Get all cookies from the node.js shell (electron)
 clearCookies() => Promise<Cookies>
 ```
 
-Clear all cookies on the node.js shell (electron)
+Return an unique identifier for the device.
 
 **Returns:** <code>Promise&lt;<a href="#cookies">Cookies</a>&gt;</code>
 
@@ -73,6 +73,6 @@ Clear all cookies on the node.js shell (electron)
 
 | Prop    | Type             | Description                                                                                                                                                                                                                            | Since |
 | ------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`d`** | <code>any</code> | Generic message interface | 1.0.0 |
+| **`d`** | <code>any</code> | The UUID of the device as available to the app. This identifier may change on modern mobile platforms that only allow per-app install UUIDs. On web, a random identifier is generated and stored on localStorage for subsequent calls. | 1.0.0 |
 
 </docgen-api>
