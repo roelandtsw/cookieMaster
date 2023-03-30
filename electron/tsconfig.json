@@ -1,19 +1,19 @@
 {
-    "compilerOptions": {
-      "allowSyntheticDefaultImports": true,
-      "declaration": true,
-      "experimentalDecorators": true,
-      "noEmitHelpers": true,
-      "importHelpers": true,
-      "lib": ["dom", "es2020"],
-      "module": "commonjs",
-      "noImplicitAny": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "outDir": "build",
-      "sourceMap": true,
-      "strict": false,
-      "target": "ES2017"
-    },
-    "include": ["src/**/*", "../src/definitions.ts", "../src/web.ts"]
-  }
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "lib": ["dom", "es2020"],
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "build",
+    "sourceMap": true,
+    "strict": false,
+    "target": "ES2017"
+  },
+  "include": ["src/**/*"]
+}

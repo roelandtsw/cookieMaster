@@ -1,43 +1,43 @@
 import type {
-  // BatteryInfo,
+  BatteryInfo,
   DeviceId,
-  // DeviceInfo,
+  DeviceInfo,
   DevicePlugin,
-  // GetLanguageCodeResult
+  GetLanguageCodeResult
 } from '../../src/definitions';
 
+import { uuid4 } from './utils';
 
 export class Device implements DevicePlugin {
 
-
-  async getId(): Promise<DeviceId> {
+  async getInfo(): Promise<DeviceInfo> {
     return {
-      uuid: "wrtesting",
+      model: 'N/A',
+      platform: <const>'electron',
+      operatingSystem: 'unknown',
+      osVersion: 'N/A',
+      manufacturer: 'N/A',
+      isVirtual: false,
+      webViewVersion: 'N/A',
     };
   }
 
+  async getLanguageCode(): Promise<GetLanguageCodeResult> {
+    return {
+      value: 'en',
+    };
+  }
+
+  async getId(): Promise<DeviceId> {
+    return {
+      uuid: uuid4(),
+    };
+  }
+
+  async getBatteryInfo(): Promise<BatteryInfo> {
+    return {
+      batteryLevel: 0,
+      isCharging: false,
+    };
+  }
 }
-
-
-// export class CookieMaster {
-//   async clearCache(): Promise<void> {
-//     // wait dialog.showMessageBox({message: options.message + ' --- electron'});
-//     console.log("clear cache WR");
-//     // return "DONE";
-//   }
-
-//   // async prompt(options: PromptOptions): Promise<PromptResult> {
-//   //   const val = window.prompt(options.message, options.inputText || '');
-//   //   return {
-//   //     value: val !== null ? val : '',
-//   //     cancelled: val === null,
-//   //   };
-//   // }
-
-//   // async confirm(options: ConfirmOptions): Promise<ConfirmResult> {
-//   //   const val = window.confirm(options.message);
-//   //   return {
-//   //     value: val,
-//   //   };
-//   // }
-// }
