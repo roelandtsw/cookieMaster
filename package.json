@@ -1,6 +1,6 @@
 {
   "name": "@roelandtsw/cookie-master",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "description": "Clear the electron HTTP cookies via custom capacitor plugin",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -26,7 +26,8 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "electron"
   ],
   "scripts": {
     "test": "uvu -r esm -r ts-node/register src/__tests__",
