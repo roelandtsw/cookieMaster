@@ -11,20 +11,15 @@ npx cap sync
 
 ## Example
 
-```typescript
-import { Device } from '@capacitor/device';
+```javascript
 
-const logDeviceInfo = async () => {
-  const info = await Device.getInfo();
+let oMessage = await CapacitorCustomPlatform.plugins.CookieMaster.clearCookies();
+console.log(oMessage);
 
-  console.log(info);
-};
 
-const logBatteryInfo = async () => {
-  const info = await Device.getBatteryInfo();
+let oMessage = await CapacitorCustomPlatform.plugins.CookieMaster.getCookies();
+console.log(oMessage);
 
-  console.log(info);
-};
 ```
 
 ## API
